@@ -1,0 +1,523 @@
+fileFormatVersion: 2
+guid: 1f66fbe5de32b455eadcb96148aa6ec8
+timeCreated: 1489186841
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: '>Capsule Blend File Data<'
+    100002: armLow.L
+    100004: armLow.R
+    100006: armUp.L
+    100008: armUp.R
+    100010: foot.L
+    100012: foot.R
+    100014: hand.L
+    100016: hand.R
+    100018: head
+    100020: hips
+    100022: junit1
+    100024: //RootNode
+    100026: root
+    100028: shin.L
+    100030: shin.R
+    100032: shoulder.L
+    100034: shoulder.R
+    100036: Sphere.002
+    100038: spine01
+    100040: spine02
+    100042: sword
+    100044: thigh.L
+    100046: thigh.R
+    100048: toe.L
+    100050: toe.R
+    100052: weapon.L
+    100054: weapon.R
+    400000: '>Capsule Blend File Data<'
+    400002: armLow.L
+    400004: armLow.R
+    400006: armUp.L
+    400008: armUp.R
+    400010: foot.L
+    400012: foot.R
+    400014: hand.L
+    400016: hand.R
+    400018: head
+    400020: hips
+    400022: //RootNode
+    400024: junit1
+    400026: root
+    400028: shin.L
+    400030: shin.R
+    400032: shoulder.L
+    400034: shoulder.R
+    400036: Sphere.002
+    400038: spine01
+    400040: spine02
+    400042: sword
+    400044: thigh.L
+    400046: thigh.R
+    400048: toe.L
+    400050: toe.R
+    400052: weapon.L
+    400054: weapon.R
+    2300000: sword
+    3300000: sword
+    4300000: sword
+    4300002: Sphere.002
+    7400000: junit1|walkHit
+    9500000: //RootNode
+    13700000: Sphere.002
+    13700002: sword
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: junit1|walkHit
+      takeName: junit1|walkHit
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: '>Capsule Blend File Data<'
+        weight: 1
+      - path: junit1
+        weight: 1
+      - path: junit1/root
+        weight: 1
+      - path: junit1/root/hips
+        weight: 1
+      - path: junit1/root/hips/spine01
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/head
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.L
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.L/armUp.L
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.L/armUp.L/armLow.L
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.L/armUp.L/armLow.L/hand.L
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.L/armUp.L/armLow.L/hand.L/weapon.L
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.R
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.R/armUp.R
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.R/armUp.R/armLow.R
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.R/armUp.R/armLow.R/hand.R
+        weight: 1
+      - path: junit1/root/hips/spine01/spine02/shoulder.R/armUp.R/armLow.R/hand.R/weapon.R
+        weight: 1
+      - path: junit1/root/hips/thigh.L
+        weight: 1
+      - path: junit1/root/hips/thigh.L/shin.L
+        weight: 1
+      - path: junit1/root/hips/thigh.L/shin.L/foot.L
+        weight: 1
+      - path: junit1/root/hips/thigh.L/shin.L/foot.L/toe.L
+        weight: 1
+      - path: junit1/root/hips/thigh.R
+        weight: 1
+      - path: junit1/root/hips/thigh.R/shin.R
+        weight: 1
+      - path: junit1/root/hips/thigh.R/shin.R/foot.R
+        weight: 1
+      - path: junit1/root/hips/thigh.R/shin.R/foot.R/toe.R
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: sword
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: thigh.L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: thigh.R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: shin.L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: shin.R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: foot.L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: foot.R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine01
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine02
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: shoulder.L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: shoulder.R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: armUp.L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: armUp.R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: armLow.L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: armLow.R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: hand.L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: hand.R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: toe.L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: toe.R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: junit1(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: '>Capsule Blend File Data<'
+      parentName: junit1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: junit1
+      parentName: junit1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: root
+      parentName: junit1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hips
+      parentName: root
+      position: {x: 1.1208346e-16, y: 0.75848734, z: 0.021170318}
+      rotation: {x: -0.0000002219725, y: 0.7071068, z: 0.7071068, w: -0.00000022197247}
+      scale: {x: 1.0000026, y: 1.0000004, z: 1.0000004}
+    - name: spine01
+      parentName: hips
+      position: {x: -0.00000005509673, y: -0.045951735, z: 0.08126256}
+      rotation: {x: 0.00000022611424, y: -0.69366187, z: -0.72030073, w: -0.00000021775188}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000006}
+    - name: spine02
+      parentName: spine01
+      position: {x: -0.0000000078216535, y: 0.3526574, z: 0.000000007930793}
+      rotation: {x: 0.11515018, y: 2.842171e-14, z: -4.2632564e-14, w: 0.9933482}
+      scale: {x: 1, y: 1.0000004, z: 1.0000004}
+    - name: head
+      parentName: spine02
+      position: {x: 0.0000000013824318, y: 0.39216918, z: 0.000000028070641}
+      rotation: {x: 0.12202231, y: 0.000000236637, z: 0.000000029092417, w: 0.9925274}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: shoulder.L
+      parentName: spine02
+      position: {x: -0.11507357, y: 0.30433208, z: -0.0013727765}
+      rotation: {x: 0.6257168, y: -0.4310512, z: -0.51465285, w: -0.39724785}
+      scale: {x: 1.0000011, y: 1.0000018, z: 1.0000011}
+    - name: armUp.L
+      parentName: shoulder.L
+      position: {x: -0.000000027008351, y: 0.27826336, z: -0.00000013574025}
+      rotation: {x: 0.19355007, y: 0.028820254, z: 0.052619983, w: 0.97925425}
+      scale: {x: 0.99999934, y: 0.9999975, z: 1.0000006}
+    - name: armLow.L
+      parentName: armUp.L
+      position: {x: -0.000000029802319, y: 0.3657632, z: -0.000000042840835}
+      rotation: {x: 0.027588235, y: 0.038316272, z: -0.025264196, w: -0.9985652}
+      scale: {x: 1, y: 0.9999994, z: 0.99999946}
+    - name: hand.L
+      parentName: armLow.L
+      position: {x: 0.00000001862645, y: 0.358715, z: -0.000000011175869}
+      rotation: {x: 0.5628629, y: -0.0033939022, z: 0.02062281, w: 0.826286}
+      scale: {x: 1.0000015, y: 1.0000018, z: 1.0000011}
+    - name: weapon.L
+      parentName: hand.L
+      position: {x: 0.35358304, y: 0.34235355, z: -1.3524587}
+      rotation: {x: 0.3437428, y: -0.6179327, z: -0.6179327, w: 0.34374306}
+      scale: {x: 1.0000001, y: 0.9999998, z: 0.9999995}
+    - name: shoulder.R
+      parentName: spine02
+      position: {x: 0.11507357, y: 0.30433217, z: -0.0013727716}
+      rotation: {x: 0.6836866, y: 0.51157707, z: -0.43469727, w: 0.2861816}
+      scale: {x: 1.0000001, y: 1, z: 1.0000007}
+    - name: armUp.R
+      parentName: shoulder.R
+      position: {x: -0.00000002328306, y: 0.27826342, z: -0.00000006286427}
+      rotation: {x: -0.15840077, y: 0.25579703, z: -0.123045295, w: 0.94569397}
+      scale: {x: 1.0000014, y: 1.0000002, z: 1.0000025}
+    - name: armLow.R
+      parentName: armUp.R
+      position: {x: -0.0000000372529, y: 0.3657631, z: 0.0000000074505797}
+      rotation: {x: -0.031806044, y: 0.616353, z: 0.019693695, w: 0.786581}
+      scale: {x: 1.0000014, y: 1, z: 1.0000018}
+    - name: hand.R
+      parentName: armLow.R
+      position: {x: -0.000000014901159, y: 0.35871494, z: 0.0000000018626449}
+      rotation: {x: 0.017665891, y: 0.29989147, z: -0.059789598, w: 0.951934}
+      scale: {x: 1.0000024, y: 1.0000011, z: 1.000001}
+    - name: weapon.R
+      parentName: hand.R
+      position: {x: -0.040716328, y: 0.046791002, z: -0.011977078}
+      rotation: {x: -0.34374312, y: -0.6179324, z: -0.6179329, w: -0.3437429}
+      scale: {x: 1.0000008, y: 1.0000004, z: 0.99999917}
+    - name: thigh.L
+      parentName: hips
+      position: {x: 0.18941079, y: -0.098593205, z: 0.033845477}
+      rotation: {x: -0.652221, y: -0.009454308, z: -0.007731592, w: 0.7579305}
+      scale: {x: 1.0000038, y: 1.0000042, z: 1.0000012}
+    - name: shin.L
+      parentName: thigh.L
+      position: {x: 0.0000000074505797, y: 0.3380691, z: 0.0000000069849184}
+      rotation: {x: -0.13482364, y: -0.0000069187945, z: -0.00451764, w: 0.9908594}
+      scale: {x: 1.0000029, y: 1.0000024, z: 1.0000011}
+    - name: foot.L
+      parentName: shin.L
+      position: {x: 0.000000012572853, y: 0.34716502, z: -0.000000017229466}
+      rotation: {x: 0.4228783, y: 0.00543164, z: 0.015821395, w: 0.9060321}
+      scale: {x: 1.0000018, y: 1.0000001, z: 1.0000018}
+    - name: toe.L
+      parentName: foot.L
+      position: {x: -0.000000006555637, y: 0.124143936, z: 0.000000027823258}
+      rotation: {x: 0.40175742, y: 0.000007844295, z: 0.0000035958356, w: 0.91574615}
+      scale: {x: 1.0000006, y: 1.0000033, z: 0.9999974}
+    - name: thigh.R
+      parentName: hips
+      position: {x: -0.18941085, y: -0.098593205, z: 0.033845216}
+      rotation: {x: -0.6521823, y: 0.00623475, z: 0.010501153, w: 0.7579638}
+      scale: {x: 1.0000019, y: 1.0000027, z: 1.0000008}
+    - name: shin.R
+      parentName: thigh.R
+      position: {x: 0.000000079860904, y: 0.33806905, z: 0.000000025145706}
+      rotation: {x: -0.13482048, y: 0.0077235983, z: 0.0046128654, w: 0.9908293}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000002}
+    - name: foot.R
+      parentName: shin.R
+      position: {x: -0.000000013969837, y: 0.347165, z: 0.000000015832482}
+      rotation: {x: 0.42293173, y: -0.0086393645, z: -0.014323792, w: 0.9060072}
+      scale: {x: 1.0000012, y: 1.0000005, z: 1.0000006}
+    - name: toe.R
+      parentName: foot.R
+      position: {x: 4.6566123e-10, y: 0.12414395, z: -0.000000017695127}
+      rotation: {x: 0.40175757, y: 0.000011005904, z: 0.0000049839723, w: 0.91574615}
+      scale: {x: 1.0000001, y: 1.0000017, z: 0.99999905}
+    - name: Sphere.002
+      parentName: junit1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sword
+      parentName: junit1(Clone)
+      position: {x: 1.5119727, y: 0.017179029, z: -5.880132e-10}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
