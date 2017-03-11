@@ -8,12 +8,17 @@ ModelImporter:
     100000: '>Capsule Blend File Data<'
     100002: //RootNode
     100004: tower
+    100006: flag
     400000: '>Capsule Blend File Data<'
     400002: //RootNode
     400004: tower
+    400006: flag
     2300000: tower
+    2300002: flag
     3300000: tower
+    3300002: flag
     4300000: tower
+    4300002: flag
   materials:
     importMaterials: 1
     materialName: 0
