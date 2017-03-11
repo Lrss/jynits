@@ -1,9 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour {
-	public string[] inputkeys = new string[3] ;
+	enum Buttons
+	{
+		Spawn1,
+		Spawn2,
+		Spawn3,
+		Up,
+		Down
+	}
+
+	public string[] inputkeys = new string[Enum.GetNames(typeof(MyEnum)).Length] ;
 	public GameObject unit;
 	List<GameObject> Spawners = new List<GameObject>();
 	int selectedSpawner = 0;
@@ -21,25 +31,29 @@ public class PlayerController : MonoBehaviour {
 
 		Spawners[selectedSpawner].GetComponent<Renderer> ().material.color = Color.green;
 	}
-	bool[] KeyPress = new bool[3];
-	bool[] DeltaPress = new bool[3];
+	bool[] KeyPress = new bool[Enum.GetNames(typeof(MyEnum)).Length];
+	bool[] DeltaPress = new bool[Enum.GetNames(typeof(MyEnum)).Length];
 	void Update () {
-		KeyPress[0] = Input.GetKey(inputkeys[0]);
-		KeyPress[1] = Input.GetKey(inputkeys[1]);
-		KeyPress[2] = Input.GetKey(inputkeys[2]);
-
-		if(KeyPress[2] && !DeltaPress[2]){
-			var gb = Instantiate(unit, Spawners[selectedSpawner].transform.position + Vector3.up*2, Quaternion.identity);
-			if (transform.position.x < 0)
-				gb.GetComponent<MoveUnitForward> ().turn = true;
+		foreach (Buttons btn in Enum.GetValues(typeof(Buttons))){
+			KeyPress[btn] = Input.GetKey(inputkeys[btn]);
 		}
 
-		if (KeyPress[0] && !DeltaPress[0]) {
+		if(KeyPress[Buttons.Spawn1] && !DeltaPress[Buttons.Spawn1]){
+			var gb = Instantiate(unit, Spawners[selectedSpawner].transform.position + Vector3.up*2, Quaternion.identity);
+			if (transform.position.x < 0) {
+				gb.GetComponent<Renderer> ().material.color = Color.yellow;
+				gb.GetComponent<MoveUnitForward> ().turn = true;
+			} else {
+				gb.GetComponent<Renderer> ().material.color = Color.blue;
+			}
+		}
+
+		if (KeyPress[Buttons.Up] && !DeltaPress[Buttons.Up]) {
 			if (selectedSpawner < Spawners.Count-1 ) {
 				selectedSpawner++;
 			}
 		}
-		else if(KeyPress[1] && !DeltaPress[1]){
+		else if(KeyPress[Buttons.Down] && !DeltaPress[Buttons.Down]){
 			if (selectedSpawner > 0 ) {
 				selectedSpawner--;
 			}
@@ -49,8 +63,8 @@ public class PlayerController : MonoBehaviour {
 			Spawners[selectedSpawner].GetComponent<Renderer> ().material.color = Color.green;
 		}
 		deltaSelectedSpawner = selectedSpawner;
-		DeltaPress[0] = KeyPress[0];
-		DeltaPress[1] = KeyPress[1];
-		DeltaPress[2] = KeyPress[2];
+		foreach (Buttons btn in Enum.GetValues(typeof(Buttons))){
+				DeltaPress[btn] = KeyPress[btn];
+		}
 	}
 }
