@@ -15,7 +15,7 @@ public class Attack : MonoBehaviour {
 	public GameObject enemySpawner;
 	public GameObject mySpawner;
 	List<GameObject> targets = new List<GameObject>();
-	Animator anim;
+	Animator anim;   
 	void Start () {
 		anim = GetComponent<Animator> ();
 	}
@@ -74,7 +74,7 @@ public class Attack : MonoBehaviour {
 			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 1) {
 				if (currentTarget == enemySpawner) {
 					Debug.Log("Player " + tag + " Vandt en LANE!");
-					Destroy(currentTarget);
+					Destroy(currentTarget);                    
 				}
 				//else
 					//ApplyDamage
