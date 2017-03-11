@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour {
 				EnemySpawners.Add(child.gameObject);
 			}
 		}
+		selectedSpawner = MySpawners.Count / 2;
 		MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
 	}
 
