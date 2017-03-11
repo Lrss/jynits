@@ -39,22 +39,28 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if(KeyPress[(int)Buttons.Spawn1] && !DeltaPress[(int)Buttons.Spawn1]){
-			var gb1 = Instantiate(unit, Spawners[selectedSpawner].transform.position + Vector3.up*2, Quaternion.identity);
-			gb1.GetComponent<Renderer> ().material.color = Color.yellow;
-			if (transform.position.x < 0)
-				gb1.GetComponent<MoveUnitForward> ().turn = true;
+			Vector3 spawnPoint = new Vector3 (
+				Spawners[selectedSpawner].transform.position.x + (transform.position.x < 0 ?1:-1),
+				0.05f,
+				Spawners[selectedSpawner].transform.position.z);
+			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0.02f, (transform.position.x < 0 ?90:-90), 0));
+			Instantiate(unit, spawnPoint, spawnRotation);
 		}
 		if(KeyPress[(int)Buttons.Spawn2] && !DeltaPress[(int)Buttons.Spawn2]){
-			var gb2 = Instantiate(unit, Spawners[selectedSpawner].transform.position + Vector3.up*2, Quaternion.identity);
-			gb2.GetComponent<Renderer> ().material.color = Color.blue;
-			if (transform.position.x < 0)
-				gb2.GetComponent<MoveUnitForward> ().turn = true;
+			Vector3 spawnPoint = new Vector3 (
+				Spawners[selectedSpawner].transform.position.x + (transform.position.x < 0 ?1:-1),
+				0f,
+				Spawners[selectedSpawner].transform.position.z);
+			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0.02f, (transform.position.x < 0 ?90:-90), 0));
+			Instantiate(unit, spawnPoint, spawnRotation);
 		}
 		if(KeyPress[(int)Buttons.Spawn3] && !DeltaPress[(int)Buttons.Spawn3]){
-			var gb3 = Instantiate(unit, Spawners[selectedSpawner].transform.position + Vector3.up*2, Quaternion.identity);
-					gb3.GetComponent<Renderer> ().material.color = Color.cyan;
-			if (transform.position.x < 0)
-				gb3.GetComponent<MoveUnitForward> ().turn = true;
+			Vector3 spawnPoint = new Vector3 (
+				Spawners[selectedSpawner].transform.position.x + (transform.position.x < 0 ?1:-1),
+				0.05f,
+				Spawners[selectedSpawner].transform.position.z);
+			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0.02f, (transform.position.x < 0 ?90:-90), 0));
+			Instantiate(unit, spawnPoint, spawnRotation);
 		}
 		if (KeyPress[(int)Buttons.Up] && !DeltaPress[(int)Buttons.Up]) {
 			if (selectedSpawner < Spawners.Count-1 ) {
