@@ -87,6 +87,7 @@ ModelImporter:
     4300010: sword
     7400000: swordguy_rig|hit
     7400002: swordguy_rig|move
+    7400004: swordguy_rig|idle
     9500000: //RootNode
     13700000: Cube.006
     13700002: helmet_sword
@@ -118,15 +119,15 @@ ModelImporter:
       name: swordguy_rig|hit
       takeName: swordguy_rig|hit
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -246,6 +247,96 @@ ModelImporter:
       - path: helmet_sword.001
         weight: 1
       - path: Sphere
+        weight: 1
+      - path: swordguy_rig
+        weight: 1
+      - path: swordguy_rig/root
+        weight: 1
+      - path: swordguy_rig/root/footIK.L
+        weight: 1
+      - path: swordguy_rig/root/footIK.L/foot.L
+        weight: 1
+      - path: swordguy_rig/root/footIK.R
+        weight: 1
+      - path: swordguy_rig/root/footIK.R/foot.R
+        weight: 1
+      - path: swordguy_rig/root/handIK.L
+        weight: 1
+      - path: swordguy_rig/root/handIK.L/hand.L
+        weight: 1
+      - path: swordguy_rig/root/handIK.R
+        weight: 1
+      - path: swordguy_rig/root/handIK.R/hand.R
+        weight: 1
+      - path: swordguy_rig/root/handIK.R/hand.R/weaponSlot
+        weight: 1
+      - path: swordguy_rig/root/hips
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/head
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/head/beard
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/head/helmet
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/head/stache01.L
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/head/stache01.L/stache02.L
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/head/stache01.R
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/head/stache01.R/stache02.R
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/upArm.L
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/upArm.L/lowArm.L
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/upArm.R
+        weight: 1
+      - path: swordguy_rig/root/hips/stomach/upArm.R/lowArm.R
+        weight: 1
+      - path: swordguy_rig/root/hips/thigh.L
+        weight: 1
+      - path: swordguy_rig/root/hips/thigh.L/shin.L
+        weight: 1
+      - path: swordguy_rig/root/hips/thigh.R
+        weight: 1
+      - path: swordguy_rig/root/hips/thigh.R/shin.R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: swordguy_rig|idle
+      takeName: swordguy_rig|idle
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: helmet_sword
+        weight: 1
+      - path: sword
         weight: 1
       - path: swordguy_rig
         weight: 1
