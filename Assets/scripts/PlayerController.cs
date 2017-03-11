@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
 
 	void spawn(GameObject unitPrefab){
 		Vector3 spawnPoint = new Vector3 (
-			MySpawners[selectedSpawner].transform.position.x + (transform.position.x < 0 ?1:-1),
+			MySpawners[selectedSpawner].transform.position.x ,//+ (transform.position.x < 0 ?1:-1),
 			0.05f,
 			MySpawners[selectedSpawner].transform.position.z);
 		Quaternion spawnRotation = Quaternion.Euler(new Vector3(0, (transform.position.x < 0 ?90:-90), 0));
@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour {
 		jynit.gameObject.tag = (transform.position.x < 0 ? "1" : "2");
 		jynit.AddComponent<Rigidbody> ();
 		var att = jynit.AddComponent<Attack> ();
+		att.mySpawner = MySpawners [selectedSpawner];
 		att.enemySpawner = EnemySpawners [selectedSpawner];
 	}
 
