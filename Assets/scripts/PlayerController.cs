@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
 				Spawners[selectedSpawner].transform.position.x + (transform.position.x < 0 ?1:-1),
 				0.05f,
 				Spawners[selectedSpawner].transform.position.z);
-			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0.02f, (transform.position.x < 0 ?90:-90), 0));
+			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0, (transform.position.x < 0 ?90:-90), 0));
 			Instantiate(unit, spawnPoint, spawnRotation);
 		}
 		if(KeyPress[(int)Buttons.Spawn2] && !DeltaPress[(int)Buttons.Spawn2]){
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour {
 				Spawners[selectedSpawner].transform.position.x + (transform.position.x < 0 ?1:-1),
 				0f,
 				Spawners[selectedSpawner].transform.position.z);
-			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0.02f, (transform.position.x < 0 ?90:-90), 0));
+			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0, (transform.position.x < 0 ?90:-90), 0));
 			Instantiate(unit, spawnPoint, spawnRotation);
 		}
 		if(KeyPress[(int)Buttons.Spawn3] && !DeltaPress[(int)Buttons.Spawn3]){
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 				Spawners[selectedSpawner].transform.position.x + (transform.position.x < 0 ?1:-1),
 				0.05f,
 				Spawners[selectedSpawner].transform.position.z);
-			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0.02f, (transform.position.x < 0 ?90:-90), 0));
+			Quaternion spawnRotation = Quaternion.Euler(new Vector3(0, (transform.position.x < 0 ?90:-90), 0));
 			Instantiate(unit, spawnPoint, spawnRotation);
 		}
 		if (KeyPress[(int)Buttons.Up] && !DeltaPress[(int)Buttons.Up]) {
