@@ -81,6 +81,22 @@ public class PlayerController : MonoBehaviour {
 			KeyPress[(int)btn] = Input.GetKey(inputkeys[(int)btn]);
 		}
 
+		if (MySpawners [selectedSpawner] == null) {
+			int temp = selectedSpawner;
+			for (int i = 0; temp - i >= 0 || temp + i <= MySpawners.Count - 1; i++) {
+				if (temp + i <= MySpawners.Count -1 && MySpawners [temp + i] != null) {
+					selectedSpawner = temp + i;
+					MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
+					break;
+				}
+				if (temp - i >= 0 && MySpawners [temp - i] != null) {
+					selectedSpawner = temp - i;
+					MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
+					break;
+				}
+			}
+		}
+
 		if(KeyPress[(int)Buttons.Spawn1] && !DeltaPress[(int)Buttons.Spawn1]){
 			spawn (unitPrefab01);
 		}
@@ -92,14 +108,23 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (KeyPress[(int)Buttons.Up] && !DeltaPress[(int)Buttons.Up]) {
-			if (selectedSpawner < MySpawners.Count-1 ) {
-				selectedSpawner++;
+			int tempSelecter = selectedSpawner;
+			do {
+				tempSelecter++;
+			} while (tempSelecter < MySpawners.Count - 1 && MySpawners [tempSelecter] == null);
+			if (tempSelecter <= MySpawners.Count -1 ) {
+				selectedSpawner = tempSelecter;
 				updateSpawnerColor();
 			}
 		}
 		else if(KeyPress[(int)Buttons.Down] && !DeltaPress[(int)Buttons.Down]){
-			if (selectedSpawner > 0 ) {
-				selectedSpawner--;
+			int tempSelecter = selectedSpawner;
+			do {
+				tempSelecter--;
+			} while ( tempSelecter > 0 && MySpawners [tempSelecter] == null);
+					
+			if (tempSelecter >= 0 ) {
+				selectedSpawner = tempSelecter;
 				updateSpawnerColor();
 			}
 		}
