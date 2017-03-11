@@ -39,6 +39,8 @@ ModelImporter:
     100062: upArm.L
     100064: upArm.R
     100066: weaponSlot
+    100068: Plane
+    100070: sword
     400000: '>Capsule Blend File Data<'
     400002: beard
     400004: Cube.006
@@ -73,10 +75,16 @@ ModelImporter:
     400062: upArm.L
     400064: upArm.R
     400066: weaponSlot
+    400068: Plane
+    400070: sword
+    2300000: Plane
+    3300000: Plane
     4300000: Cube.006
     4300002: helmet_sword
     4300004: helmet_sword.001
     4300006: Sphere
+    4300008: Plane
+    4300010: sword
     7400000: swordguy_rig|hit
     7400002: swordguy_rig|move
     9500000: //RootNode
@@ -84,6 +92,7 @@ ModelImporter:
     13700002: helmet_sword
     13700004: helmet_sword.001
     13700006: Sphere
+    13700008: sword
   materials:
     importMaterials: 1
     materialName: 0
