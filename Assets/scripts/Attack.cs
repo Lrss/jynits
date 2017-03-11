@@ -15,20 +15,26 @@ public class Attack : MonoBehaviour {
 	public GameObject enemySpawner;
 	List<GameObject> targets = new List<GameObject>();
 
-	void Start () {	}
+	void Start () {
+		
+	}
 
 	void FaceTarget(GameObject target){
 		transform.LookAt(target.transform);
 	}
 
 	void OnTriggerEnter(Collider other) {
-		Debug.Log (other);
-		if (other.tag != tag) {
+		if (other.tag != tag && other.tag !=  "Untagged") {
+			Debug.Log (other);
 			targets.Add (other.gameObject);
 		}
 	}
 
 	void Update () {
+		if (enemySpawner == null) {
+			currentState = State.idle;
+			return;
+		}
 		currentTarget = enemySpawner;
 		if (targets.Count > 0) {
 			for (int i = targets.Count - 1; i >= 0; i--)

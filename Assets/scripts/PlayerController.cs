@@ -12,33 +12,50 @@ public class PlayerController : MonoBehaviour {
 		Up,
 		Down
 	}
-	public GameObject enemy; 
+	GameObject enemy; 
 	public string[] inputkeys = new string[5] ;
-	public GameObject unitPrefab02;
-	public GameObject unitPrefab01;
-	public GameObject unitPrefab03;
+
+	GameObject unitPrefab01;
+	GameObject unitPrefab02;
+	GameObject unitPrefab03;
+
 	public List<GameObject> EnemySpawners = new List<GameObject>();
 	public List<GameObject> MySpawners = new List<GameObject>();
 	int selectedSpawner = 0;
 	int deltaSelectedSpawner = 0;
+	int playernr;
 
 	void Start () {
+		if (name == "Player01") {
+			playernr = 1;
+		} else {
+			playernr = 2;
+		}
+		enemy = GameObject.Find ("Player0"+(playernr == 1 ? 2 : 1));
+		unitPrefab01 = Resources.Load ("prefabs/" +(playernr == 1? "blue":"red")+ "_swordJynit1") as GameObject;
+		unitPrefab02 = Resources.Load ("prefabs/" +(playernr == 1? "blue":"red")+ "_swordJynit2") as GameObject;
+		unitPrefab03 = Resources.Load ("prefabs/" +(playernr == 1? "blue":"red")+ "_swordJynit3") as GameObject;
+
+		tag = playernr.ToString();
 		foreach (Transform child in transform)
 		{
+			if (child.tag == "Spawner")
+				child.tag = playernr.ToString();
 			if (child.tag == "1" || child.tag == "2")
 			{
-				child.GetComponent<Renderer> ().material.color = Color.red;
+
+				child.GetComponent<Renderer> ().material.color = Color.black;
 				MySpawners.Add(child.gameObject);
 			}
 		}
 		foreach (Transform child in enemy.transform)
 		{
-			if (child.tag == "1" || child.tag == "2")
+			if (child.tag == "1" || child.tag == "2" || child.tag == "Spawner")
 			{
 				EnemySpawners.Add(child.gameObject);
 			}
 		}
-		MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = Color.green;
+		MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
 	}
 
 	void spawn(GameObject unitPrefab){
@@ -50,7 +67,8 @@ public class PlayerController : MonoBehaviour {
 		GameObject jynit;
 		jynit = Instantiate (unitPrefab, spawnPoint, spawnRotation);
 		jynit.gameObject.tag = (transform.position.x < 0 ? "1" : "2");
-		var att = jynit.GetComponent<Attack> ();
+		jynit.AddComponent<Rigidbody> ();
+		var att = jynit.AddComponent<Attack> ();
 		att.enemySpawner = EnemySpawners [selectedSpawner];
 	}
 
@@ -92,7 +110,7 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 	void updateSpawnerColor(){
-		MySpawners[deltaSelectedSpawner].GetComponent<Renderer> ().material.color = Color.red;
-		MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = Color.green;
+		MySpawners[deltaSelectedSpawner].GetComponent<Renderer> ().material.color = Color.black;
+		MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
 	}
 }
