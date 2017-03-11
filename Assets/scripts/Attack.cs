@@ -52,15 +52,12 @@ public class Attack : MonoBehaviour {
 
 		switch (currentState) {
 		case State.idle:
-			anim.SetBool ("walk", false);
-			anim.SetBool ("hit", false);
 			if (enemySpawner != null) {
 				currentState = State.walk;
 			}
 			break;//Fuck
 		case State.walk:
-			anim.SetBool ("walk", true);
-			anim.SetBool ("hit", false);
+			anim.SetBool ("isMoving", true);
 			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 1) {
 				currentState = State.attack;
 			} else {
@@ -68,13 +65,16 @@ public class Attack : MonoBehaviour {
 			}
 			break;
 		case State.attack:
-			anim.SetBool ("walk", false);
-			anim.SetBool ("hit", true);
+			anim.SetBool ("isMoving", false);
 			FaceTarget (currentTarget);
 			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 1) {
 				if (currentTarget == enemySpawner) {
 					Debug.Log("Player " + tag + " Vandt en LANE!");
+<<<<<<< HEAD
 					Destroy(currentTarget);                    
+=======
+					Destroy(currentTarget,0.5f);
+>>>>>>> 4f1a01e558977ef32eb5fde31ad3657f810a2c5f
 				}
 				//else
 					//ApplyDamage

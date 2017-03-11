@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour {
 	GameObject unitPrefab02;
 	GameObject unitPrefab03;
 
-	public List<GameObject> EnemySpawners = new List<GameObject>();
-	public List<GameObject> MySpawners = new List<GameObject>();
+	List<GameObject> EnemySpawners = new List<GameObject>();
+	List<GameObject> MySpawners = new List<GameObject>();
 	int selectedSpawner = 0;
 	int deltaSelectedSpawner = 0;
 	int playernr;
@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour {
 				child.tag = playernr.ToString();
 			if (child.tag == "1" || child.tag == "2")
 			{
-
 				child.GetComponent<Renderer> ().material.color = Color.black;
 				MySpawners.Add(child.gameObject);
 			}
@@ -55,7 +54,8 @@ public class PlayerController : MonoBehaviour {
 				EnemySpawners.Add(child.gameObject);
 			}
 		}
-		MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
+		selectedSpawner = MySpawners.Count / 2;
+		MySpawners [selectedSpawner].GetComponent<Renderer> ().enabled = true;
 	}
 
 	void spawn(GameObject unitPrefab){
@@ -86,12 +86,12 @@ public class PlayerController : MonoBehaviour {
 			for (int i = 0; temp - i >= 0 || temp + i <= MySpawners.Count - 1; i++) {
 				if (temp + i <= MySpawners.Count -1 && MySpawners [temp + i] != null) {
 					selectedSpawner = temp + i;
-					MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
+					MySpawners [selectedSpawner].GetComponent<Renderer> ().enabled = true;
 					break;
 				}
 				if (temp - i >= 0 && MySpawners [temp - i] != null) {
 					selectedSpawner = temp - i;
-					MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
+					MySpawners [selectedSpawner].GetComponent<Renderer> ().enabled = true;
 					break;
 				}
 			}
@@ -136,7 +136,9 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 	void updateSpawnerColor(){
-		MySpawners[deltaSelectedSpawner].GetComponent<Renderer> ().material.color = Color.black;
-		MySpawners[selectedSpawner].GetComponent<Renderer> ().material.color = (playernr == 1? Color.blue :Color.red);
+		if (MySpawners [deltaSelectedSpawner] != null) {
+			MySpawners [deltaSelectedSpawner].GetComponent<Renderer> ().enabled = false;
+		}
+		MySpawners [selectedSpawner].GetComponent<Renderer> ().enabled = true;
 	}
 }
