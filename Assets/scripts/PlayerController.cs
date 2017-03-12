@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour {
 		var att = jynit.AddComponent<Attack> ();
 		att.mySpawner = MySpawners [selectedSpawner];
 		att.enemySpawner = EnemySpawners [selectedSpawner];
+        Fabric.EventManager.Instance.PostEvent("UnitSpawn", gameObject);
 		jynits.Add (jynit);
 	}
 
