@@ -27,7 +27,7 @@ public class Attack : MonoBehaviour {
 		health -= amount;
 		Debug.Log (name + " have " + health +"");
 		if (health < 0) {
-            //Die Animation
+			anim.SetBool ("isDead", true);
             Fabric.EventManager.Instance.PostEvent("UnitKilled", gameObject);
             Destroy (gameObject);
 		}
@@ -44,6 +44,9 @@ public class Attack : MonoBehaviour {
 				Debug.Log (tag + " is attacking " + unitt.tag + " now!");
 				targets.Add (unitt.gameObject);
 			}
+		}
+		else if(other.tag == "spear"){
+			Destroy (gameObject);
 		}
 	}
 	float attacktimer;
