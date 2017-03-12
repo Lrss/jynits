@@ -10,6 +10,9 @@ public enum State
 }
 
 public class Attack : MonoBehaviour {
+
+	public int health = 100;
+
 	public State currentState = State.idle;
 	GameObject currentTarget;
 	public GameObject enemySpawner;
@@ -20,16 +23,29 @@ public class Attack : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 	}
 
+	public void ApplyDamage(int amount){
+		health -= amount;
+		Debug.Log (name + " have " + health +"");
+		if (health < 0) {
+			//Die Animation
+			Destroy (gameObject);
+		}
+	}
+
 	void FaceTarget(GameObject target){
 		transform.LookAt(target.transform);
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag != tag && other.tag !=  "Untagged") {
-			Debug.Log (other);
-			targets.Add (other.gameObject);
+		if (other.tag == "3") {
+			GameObject unitt = other.transform.parent.gameObject;
+			if (unitt.tag != tag && unitt.tag != "Untagged") {
+				Debug.Log (tag + " is attacking " + unitt.tag + " now!");
+				targets.Add (unitt.gameObject);
+			}
 		}
 	}
+	float attacktimer;
 
 	void Update () {
 		if (enemySpawner == null || mySpawner == null) {
@@ -58,8 +74,9 @@ public class Attack : MonoBehaviour {
 			break;//Fuck
 		case State.walk:
 			anim.SetBool ("isMoving", true);
-			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 1) {
+			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 2.8f) {
 				currentState = State.attack;
+				attacktimer = Time.time * 1000;
 			} else {
 				FaceTarget (currentTarget);
 			}
@@ -67,16 +84,22 @@ public class Attack : MonoBehaviour {
 		case State.attack:
 			anim.SetBool ("isMoving", false);
 			FaceTarget (currentTarget);
-			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 1) {
+			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 3){
 				if (currentTarget == enemySpawner) {
-					Debug.Log("Player " + tag + " Vandt en LANE!");
-					Destroy(currentTarget,0.5f);
+					Debug.Log ("Player " + tag + " Vandt en LANE!");
+					Destroy (currentTarget, 0.5f);
 				}
-				//else
-					//ApplyDamage
+				else {
+					//Debug.Log (Time.time * 1000 - attacktimer);
+					if (Time.time * 1000 - attacktimer >= 900){
+						currentTarget.gameObject.GetComponent<Attack>().ApplyDamage(40);
+						attacktimer = Time.time *1000;
+					}
+				}
 				
 			} else {
 				currentState = State.walk;
+				attacktimer = 0;
 				FaceTarget (currentTarget);
 			}
 			break;
