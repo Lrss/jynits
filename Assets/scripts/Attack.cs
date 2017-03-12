@@ -44,6 +44,9 @@ public class Attack : MonoBehaviour {
 				targets.Add (unitt.gameObject);
 			}
 		}
+		else if(other.tag == "spear"){
+			Destroy (gameObject);
+		}
 	}
 	float attacktimer;
 
