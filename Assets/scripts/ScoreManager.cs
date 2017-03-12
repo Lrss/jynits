@@ -4,33 +4,35 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
+	public static int player01Score = 0;
+	public static int player02Score = 0;
 
-	public int Player01Score = 0;
-	public int Player02Score = 0;
-	public GameObject player01;
-	public GameObject player02;
-
-
-	public Text Player01Upkeep;
-	public Text Player02Upkeep;
 	public Text TowerScore;
+	public Text Win;
 
 	float startTime;
-	PlayerController p1;
-	PlayerController p2;
-	// Use this for initialization
+
 	void Start () {
 		startTime = Time.time;
-		p1 = GetComponent<PlayerController> ();
-		p2 = GetComponent<PlayerController> ();
 	}
+	int wintime;
 	int gameTime;
 	// Update is called once per frame
 	void Update () {
-		gameTime = (int)(Time.time - startTime);
-		TowerScore.text = Player01Score + " - " + Player02Score + "\n" + gameTime;
-
-		Player01Upkeep.text = "Player 1\n" + "0/0"; //p1 upkeep
-		Player02Upkeep.text = "Player 2\n" + "0/0"; //p2 upkeep
+		TowerScore.text = player01Score + " - " + player02Score + "\n" + gameTime;
+		if (player01Score > 1) {
+			Win.text = "Player 1\nWON";
+		} else if (player02Score > 1) {
+			Win.text = "Player 2\nWON";
+		} else {
+			gameTime = (int)(Time.time - startTime);
+			wintime = (int)(Time.time);
+			return;
+		}
+		if (Time.time - wintime > 5) {
+			player01Score = 0;
+			player02Score = 0;
+			Application.LoadLevel (0);
+		}
 	}
 }

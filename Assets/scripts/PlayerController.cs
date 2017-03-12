@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 	enum Buttons
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 		Up,
 		Down
 	}
+
 	GameObject enemy; 
 	public string[] inputkeys = new string[5] ;
 
@@ -19,12 +21,12 @@ public class PlayerController : MonoBehaviour {
 	GameObject unitPrefab02;
 	GameObject unitPrefab03;
 
-	List<GameObject> EnemySpawners = new List<GameObject>();
-	List<GameObject> MySpawners = new List<GameObject>();
+	public List<GameObject> EnemySpawners = new List<GameObject>();
+	public List<GameObject> MySpawners = new List<GameObject>();
 	int selectedSpawner = 0;
 	int deltaSelectedSpawner = 0;
-	int playernr;
-
+	public int playernr;
+	float startTime;
 	void Start () {
 		if (name == "Player01") {
 			playernr = 1;
@@ -56,9 +58,12 @@ public class PlayerController : MonoBehaviour {
 		}
 		selectedSpawner = MySpawners.Count / 2;
 		MySpawners [selectedSpawner].GetComponent<Renderer> ().enabled = true;
+		startTime = Time.time;
 	}
 
 	void spawn(GameObject unitPrefab){
+		if (jynits.Count >= maxUnits)
+			return;
 		Vector3 spawnPoint = new Vector3 (
 			MySpawners[selectedSpawner].transform.position.x ,//+ (transform.position.x < 0 ?1:-1),
 			0.05f,
@@ -71,11 +76,26 @@ public class PlayerController : MonoBehaviour {
 		var att = jynit.AddComponent<Attack> ();
 		att.mySpawner = MySpawners [selectedSpawner];
 		att.enemySpawner = EnemySpawners [selectedSpawner];
+		jynits.Add (jynit);
 	}
+
+	List<GameObject> jynits = new List<GameObject>();
+
+	int gameTime;
+	int maxUnits;
+	public Text PlayerUpkeep;
 
 	bool[] KeyPress = new bool[5];
 	bool[] DeltaPress = new bool[5];
 	void Update () {
+		if (ScoreManager.player01Score > 1 || ScoreManager.player02Score > 1)
+		return;
+
+		//Regainable units
+		//jynits.RemoveAll(item => item == null);
+		gameTime = (int)(Time.time - startTime);
+		maxUnits = (gameTime / 3) + 2;
+		PlayerUpkeep.text = "Player "+playernr+"\n" + jynits.Count + "/" + maxUnits;
 		//Button update.
 		foreach (Buttons btn in Enum.GetValues(typeof(Buttons))){
 			KeyPress[(int)btn] = Input.GetKey(inputkeys[(int)btn]);

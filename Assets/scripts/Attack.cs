@@ -50,8 +50,11 @@ public class Attack : MonoBehaviour {
 		}
 	}
 	float attacktimer;
-
 	void Update () {
+		if (ScoreManager.player01Score > 1 || ScoreManager.player02Score > 1) {
+			Destroy (this.gameObject);
+			return;
+		}
 		if (enemySpawner == null || mySpawner == null) {
 			Destroy (this.gameObject);
 			return;
@@ -92,7 +95,13 @@ public class Attack : MonoBehaviour {
 				if (currentTarget == enemySpawner) {
 					Debug.Log ("Player " + tag + " Vandt en LANE!");
                     Fabric.EventManager.Instance.PostEvent("LaneWon", gameObject);
-					Destroy (currentTarget, 0.5f);
+					if (mySpawner.transform.parent.GetComponent<PlayerController> ().playernr == 1)
+						ScoreManager.player01Score += 1;
+					else
+						ScoreManager.player02Score += 1;
+					Destroy (enemySpawner);
+					Destroy (mySpawner);
+					Destroy (this);
 				}
 				else {
 					//Debug.Log (Time.time * 1000 - attacktimer);
