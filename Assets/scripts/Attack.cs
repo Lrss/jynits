@@ -27,8 +27,9 @@ public class Attack : MonoBehaviour {
 		health -= amount;
 		Debug.Log (name + " have " + health +"");
 		if (health < 0) {
-			//Die Animation
-			Destroy (gameObject);
+            //Die Animation
+            Fabric.EventManager.Instance.PostEvent("UnitKilled", gameObject);
+            Destroy (gameObject);
 		}
 	}
 
@@ -90,7 +91,7 @@ public class Attack : MonoBehaviour {
 			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 3){
 				if (currentTarget == enemySpawner) {
 					Debug.Log ("Player " + tag + " Vandt en LANE!");
-                    Fabric.EventManager.Instance.PostEvent("UnitKilled", gameObject);
+                    Fabric.EventManager.Instance.PostEvent("LaneWon", gameObject);
 					Destroy (currentTarget, 0.5f);
 				}
 				else {
