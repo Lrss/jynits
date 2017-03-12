@@ -87,6 +87,7 @@ public class Attack : MonoBehaviour {
 			if (Vector3.Distance (currentTarget.transform.position, transform.position) < 3){
 				if (currentTarget == enemySpawner) {
 					Debug.Log ("Player " + tag + " Vandt en LANE!");
+                    Fabric.EventManager.Instance.PostEvent("UnitKilled", gameObject);
 					Destroy (currentTarget, 0.5f);
 				}
 				else {
